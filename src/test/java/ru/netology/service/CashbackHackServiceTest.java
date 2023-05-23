@@ -77,4 +77,81 @@ public class CashbackHackServiceTest {
 
         org.junit.Assert.assertEquals(actual, expected);
     }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount1000Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 1000;
+        int expected = 0;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount999Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 999;
+        int expected = 1;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount1001Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 1001;
+        int expected = 999;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount500Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 500;
+        int expected = 500;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount0Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 0;
+        int expected = 1000;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount1Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 1;
+        int expected = 999;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testAmount4500Api() {
+        CashbackHackService service = new CashbackHackService();
+
+        int amount = 4500;
+        int expected = 500;
+        int actual = service.remain(amount);
+
+        org.junit.jupiter.api.Assertions.assertEquals(actual, expected);
+    }
 }
